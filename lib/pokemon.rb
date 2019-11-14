@@ -17,7 +17,7 @@ class Pokemon
     pokemon = db.execute("SELECT * FROM pokemon WHERE id = ?", id_numb)
     new_pokemon = self.new(pokemon)
     binding.pry
-    new_pokemon. = pokemon[1][0]
+    new_pokemon.id = pokemon[0][0]
     new_pokemon
   end
 end
