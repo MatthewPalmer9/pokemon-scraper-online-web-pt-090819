@@ -18,7 +18,6 @@ class Pokemon
     id = db.execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
     name = pokemon[0]
     type = pokemon[1]
-    binding.pry
     new_pokemon = self.new(id: id, name: name, type: type, db: db)
   end
 end
