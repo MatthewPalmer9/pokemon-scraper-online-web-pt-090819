@@ -9,11 +9,11 @@ class Pokemon
   end
 
   def self.save(name, type, db)
-    db.execute("INSERT INTO pokemon (name, type) VALUES (?, ?)", name, type)
+    @db.execute("INSERT INTO pokemon (name, type) VALUES (?, ?)", name, type)
   end
 
   def self.find(num, db)
-    pokemon = db.execute("SELECT * FROM pokemon WHERE id = ?", num)
+    pokemon = @db.execute("SELECT * FROM pokemon WHERE id = ?", num)
     binding.pry
     new_pokemon = self.new(pokemon[0])
     new_pokemon.id = pokemon[0][0]
