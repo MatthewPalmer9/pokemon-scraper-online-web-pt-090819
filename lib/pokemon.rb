@@ -3,7 +3,7 @@ class Pokemon
   attr_reader :id
 
   def initialize(id:, name:, type:, db:)
-    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM pokemon[0][0]")
+    @id = id
     @name = name
     @type = type
     @db = db
@@ -14,6 +14,7 @@ class Pokemon
     new_pokemon.name = name
     new_pokemon.type = type
     new_pokemon.db = db
+    new_pokemon.id = DB[:conn].execute("SELECT last_insert_rowid() FROM pokemon[0][0]")
     new_pokemon
   end
 end
