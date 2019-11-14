@@ -16,7 +16,6 @@ class Pokemon
   def self.find(id_numb, db)
     pokemon = db.execute("SELECT name, type FROM pokemon WHERE id = ?", id_numb).flatten
     #binding.pry
-    id = pokemon[0]
     name = pokemon[1]
     type = pokemon[2]
     binding.pry
