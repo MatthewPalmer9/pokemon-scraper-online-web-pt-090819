@@ -20,6 +20,6 @@ class Pokemon
     name = pokemon[1]
     type = pokemon[2]
     binding.pry
-    new_pokemon = self.new(id: id, name: name, type: type)
+    new_pokemon = self.new(id: id, name: name, type: type, db: db)
   end
 end
