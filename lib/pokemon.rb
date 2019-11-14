@@ -4,6 +4,7 @@ class Pokemon
 
   def initialize(id:, name:, type:, db:)
     @id = db.execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
+    binding.pry
     @name = name
     @type = type
     @db = db
