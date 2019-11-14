@@ -19,5 +19,6 @@ class Pokemon
     name = pokemon[0]
     type = pokemon[1]
     new_pokemon = self.new(id: id, name: name, type: type, db: db)
+    new_pokemon
   end
 end
