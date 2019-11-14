@@ -15,7 +15,6 @@ class Pokemon
 
   def self.find(id_numb, db)
     pokemon = db.execute("SELECT name, type FROM pokemon WHERE id = ?", id_numb).flatten
-    #binding.pry
     id = db.execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
     name = pokemon[0]
     type = pokemon[1]
